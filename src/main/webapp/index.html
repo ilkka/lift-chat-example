@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>A chat app using Scala and Lift</title>
+    <meta name="description" content="A chat app using Scala and Lift">
+    <meta name="author" content="Ilkka Laukkanen &lt;ilkka.s.laukkanen@gmail.com&gt;">
+  </head>
+  <!-- content is in element with id main -->
+  <body class="lift:content_id=main">
+    <!-- surround this div with 'default' chrome. 'content' is id of element
+    in the chrome where this bit goes -->
+    <div id="main" class="lift:surround?with=default;at=content">
+
+      <!-- 'Chat' class is a subclass of 'CometActor' that pushes data into
+      this div -->
+      <div class="lift:comet?type=Chat">
+        <p>Some chat messages</p>
+        <ul>
+          <li>Message 1</li>
+          <li>Message 2</li>
+          <li>Message 3</li>
+        </ul>
+      </div>
+
+      <!-- this is a form apparently -->
+      <div>
+        <form class="lift:form.ajax">
+          <input class="lift:ChatIn" id="chat_id"/>
+          <input type="submit" value="Talk"/>
+        </form>
+      </div>
+
+    </div>
+  </body>
+</html>
