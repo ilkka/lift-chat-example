@@ -1,4 +1,4 @@
-// vim: set filetype=scala
+// vim: filetype=scala
 package code
 package comet
 
