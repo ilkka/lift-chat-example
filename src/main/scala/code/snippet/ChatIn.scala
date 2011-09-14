@@ -5,7 +5,7 @@ package snippet
 import net.liftweb._
 import http._
 import js._
-import jsCmds._
+import JsCmds._
 import JE._
 
 import comet.ChatServer
