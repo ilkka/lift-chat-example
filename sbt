@@ -1,1 +1,1 @@
-java -Xmx1024 -Xss2M -XX:+CMSClassUnloadingEnabled -jar `dirname $0`/sbt-launcher.jar "$@"
+java -Xmx512M -XX:MaxPermSize=256M -XX:+CMSClassUnloadingEnabled -jar `dirname $0`/sbt-launcher.jar "$@"
