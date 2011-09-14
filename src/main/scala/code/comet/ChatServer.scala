@@ -1,4 +1,3 @@
-// vim: filetype=scala
 package code
 package comet
 
@@ -11,20 +10,20 @@ import actor._
  * thread-safe.
  */
 object ChatServer extends LiftActor with ListenerManager {
-	private var msgs = Vector("Welcome") // private state
+  private var msgs = Vector("Welcome") // private state
 
-	/**
-	 * When listeners are updated, what messages are sent?
-	 * Send msgs which is immutable and can be shared.
-	 */
-	def createUpdate = msgs
+  /**
+   * When listeners are updated, what messages are sent?
+   * Send msgs which is immutable and can be shared.
+   */
+  def createUpdate = msgs
 
-	/**
-	 * Process incoming messages. Look for strings, add them to
-	 * msgs and send out to listeners.
-	 */
-	override def lowPriority = {
-		case s: String => msgs :+= s; updateListeners()
-	}
+  /**
+   * Process incoming messages. Look for strings, add them to
+   * msgs and send out to listeners.
+   */
+  override def lowPriority = {
+    case s: String => msgs :+= s; updateListeners()
+  }
 }
 
